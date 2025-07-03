@@ -1,0 +1,385 @@
+/* Podia-Style Light UI CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+body.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+aside {
+  background-color: #1f2937; /* dark gray (you can adjust) */
+  color: #fff;
+  min-height: 100vh;
+  width: 240px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+aside a,
+aside button {
+  color: #d1d5db;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s;
+  font-weight: 500;
+}
+
+aside a:hover,
+aside button:hover {
+  background-color: #374151;
+}
+
+aside a.active-nav {
+  background-color: #2563eb;
+  color: white;
+}
+
+
+/* Main */
+main {
+  margin-left: 240px;
+  padding: 2rem;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4 {
+  color: #111827;
+}
+
+/* Date */
+#current-date {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Cards */
+.card {
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card span {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+/* Colors */
+.text-green-400 {
+  color: #10b981;
+}
+.text-red-400 {
+  color: #ef4444;
+}
+
+/* Form */
+#transaction-form input,
+#transaction-form select {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+#transaction-form button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  transition: background 0.2s ease;
+  font-weight: 600;
+}
+
+#transaction-form button:hover {
+  background-color: #2563eb;
+}
+
+/* List */
+#transaction-list li {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Charts */
+canvas {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.stat-card h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+}
+
+.change {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.positive {
+  color: #10b981; /* green */
+}
+
+.negative {
+  color: #ef4444; /* red */
+}
+
+/* Optional colored card backgrounds */
+.income-card {
+  background-color: #ecfdf5;
+}
+.expense-card {
+  background-color: #fef2f2;
+}
+.balance-card {
+  background-color: #eef2ff;
+}
+.transaction-item {
+  background: white;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.icon-wrapper.green {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.icon-wrapper.red {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.tx-details {
+  flex-grow: 1;
+}
+
+.tx-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.tx-amount {
+  font-weight: bold;
+  white-space: nowrap;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.text-green {
+  color: #16a34a;
+}
+
+.text-red {
+  color: #dc2626;
+}
+
+.delete-icon {
+  width: 20px;
+  height: 20px;
+}
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.chart-box {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+/* Summary Cards */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.summary-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.summary-card p {
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+.summary-card span {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* Goal Cards */
+.goal-list {
+  display: grid;
+  gap: 1.5rem;
+}
+.goal-card {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.goal-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.goal-card .card-header h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+.goal-card .delete-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #ef4444;
+}
+.goal-stats {
+  margin: 0.5rem 0;
+  color: #374151;
+}
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+.card-footer {
+  margin-top: 0.75rem;
+}
+.badge {
+  display: inline-block;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+}
+
+/* Form */
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.btn-primary {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+
+.chart-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
